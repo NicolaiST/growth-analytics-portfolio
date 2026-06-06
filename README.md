@@ -12,13 +12,19 @@ End-to-end marketing analytics data model built in BigQuery Sandbox, covering bu
 Raw Sources → Staging Models → Fact Tables → ML Models → Looker Studio
 
 
-| Layer     | Dataset            | Purpose                          |
-|-----------|-------------------|----------------------------------|
-| Raw       | marketing_data     | Synthetic source data            |
-| Raw       | crm_data          | CRM events and conversions       |
-| Marts     | fct_* tables      | Modelled analytical facts        |
-| ML        | *_model / *_pred  | BigQuery ML predictions          |
-| Reporting | analytics_reporting| Looker Studio data sources       |
+Data Generators → Raw Tables → Staging → Marts → ML → Reporting
+
+
+| Layer      | Folder              | Purpose                               |
+|------------|---------------------|---------------------------------------|
+| Generators | /data_generation    | Synthetic data with realistic quality |
+| Raw        | marketing_data      | Generated source tables               |
+| Raw        | crm_data            | CRM events and conversions            |
+| Staging    | models/staging      | Cleaned + typed + null-handled        |
+| Marts      | fct_* tables        | Modelled analytical facts             |
+| ML         | *_model             | BigQuery ML predictions               |
+| Reporting  | analytics_reporting | Looker Studio data sources            |
+
 
 ## Key Models
 
